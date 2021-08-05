@@ -1,12 +1,13 @@
 import React from 'react';
 import TodoList from './components/TodoList'
+import TodoForm from './components/TodoForm'
 
 
 const todos = [
     {
       id: 1,
       task: "Wash dog",
-      due: "2021-08-05 at 12:00:00pm",
+      due: "2021-08-05",
       completed: false
     }
 ]
@@ -47,8 +48,8 @@ class App extends React.Component {
       Todos: [
         ...this.state.Todos,
         {
-          id: this.state.Todos.length,
-          task: todo.name,
+          id: this.state.Todos.length + 1,
+          task: todo.task,
           due: todo.due,
           completed: false
         }
@@ -62,6 +63,7 @@ class App extends React.Component {
         <header>
           <h1>Your Todo List</h1>
         </header>
+        <TodoForm addTodo={this.addTodo} />
         <TodoList Todos={this.state.Todos} toggleCompleted={this.toggleCompleted} clearCompleted={this.clearCompleted}/>
       </div>
     );
