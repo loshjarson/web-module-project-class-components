@@ -1,0 +1,30 @@
+.todo {
+    border-radius: 10px;
+    border: 2px dotted black;
+    background-color: white;
+    text-align: center;
+    margin: 4px 0;
+    cursor: pointer;
+  }
+
+.todo.completed {
+    border: solid;
+    text-decoration: line-through;
+  }
+
+button {
+    background-color: #e63000;
+    color: white;
+    font-size: 18px;
+    padding: 6px 14px;
+  }
+
+button:hover {
+    background-color: #e64944;
+}
+
+.input:focus, textarea:focus {
+    outline: none;
+    border-bottom-color: none;
+
+}
