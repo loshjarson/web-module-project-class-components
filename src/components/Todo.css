@@ -8,7 +8,6 @@
   }
 
 .todo.completed {
-    background-color: grey;
     border: solid;
     text-decoration: line-through;
   }
@@ -22,4 +21,10 @@ button {
 
 button:hover {
     background-color: #e64944;
+}
+
+.input:focus, textarea:focus {
+    outline: none;
+    border-bottom-color: none;
+
 }

@@ -34,10 +34,35 @@ class App extends React.Component {
     });
   }
 
+  clearCompleted = () => {
+    this.setState({
+      ...this.state,
+      Todos: this.state.Todos.filter(item => !item.completed)
+    })
+  }
+
+  addTodo = (todo) => {
+    this.setState({
+      ...this.state,
+      Todos: [
+        ...this.state.Todos,
+        {
+          id: this.state.Todos.length,
+          task: todo.name,
+          due: todo.due,
+          completed: false
+        }
+      ]
+    })
+  }
+
   render() {
     return (
       <div>
-        <TodoList Todos={this.state.Todos} toggleCompleted={this.toggleCompleted}/>
+        <header>
+          <h1>Your Todo List</h1>
+        </header>
+        <TodoList Todos={this.state.Todos} toggleCompleted={this.toggleCompleted} clearCompleted={this.clearCompleted}/>
       </div>
     );
   }
